@@ -1,0 +1,7 @@
+{   
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "examplemod:block/sharko_block_side",
+		"side": "examplemod:block/sharko_block"
+	}
+}
