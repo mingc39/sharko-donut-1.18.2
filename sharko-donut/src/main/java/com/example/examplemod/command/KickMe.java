@@ -25,10 +25,12 @@ public class KickMe {
 			ServerPlayer player = source.getPlayerOrException();
 			player.connection.disconnect(new TextComponent("킼미킼미킼미없"));
 			LogUtils.getLogger().info("플레이어 \"" + player.getName().getString() + "\"(이)가 대오하였습니다.");
+			// TODO: 플레이어 XXX가 도주하였다고 전체 메시지 떄리는거 넣어주세요
 		} catch (CommandSyntaxException e) {
 			//e.printStackTrace();
 			LogUtils.getLogger().error("플레이어가 아닌 엔티티가 대오하려 하빈다. 서버가 폭파됩니다");
-			source.getServer().stopServer();
+			// TODO: 왜 stopServer해도 서버 꺼지다 맘?
+			//source.getServer().stopServer();
 		}
 		/*
 		if (source.getEntity() instanceof Player) {
