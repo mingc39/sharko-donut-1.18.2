@@ -1,3 +1,5 @@
 {
-  "block.examplemod.sharko_block": "샤코 블럭"
+  "block.examplemod.sharko_block": "샤코 블럭", 
+  "item.examplemod.sharko_item": "샤코 아이템",
+  "itemGroup.examplemod": "샤코 모드"
 }
