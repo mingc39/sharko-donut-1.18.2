@@ -3,8 +3,13 @@ package com.example.examplemod;
 import com.example.examplemod.init.BlockInit;
 import com.example.examplemod.init.ItemInit;
 import com.mojang.logging.LogUtils;
+
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,8 +31,16 @@ public class ExampleMod
 {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    
+	
     public static final String MODID = "examplemod";
+    public static final CreativeModeTab CREATIVE_TAB = new CreativeModeTab(MODID) {
+		
+		@Override
+		@OnlyIn(Dist.CLIENT)
+		public ItemStack makeIcon() {
+			return new ItemStack(ItemInit.SHARKO_ITEM.get());
+		}
+	};
 
     public ExampleMod()
     {
