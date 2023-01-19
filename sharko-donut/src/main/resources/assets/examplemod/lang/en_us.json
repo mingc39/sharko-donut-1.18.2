@@ -1,3 +1,5 @@
 {
-  "block.examplemod.sharko_block": "Sharko block"
+  "block.examplemod.sharko_block": "Sharko block",
+  "item.examplemod.sharko_item": "Sharko item",
+  "itemGroup.examplemod": "Sharko mod"
 }
