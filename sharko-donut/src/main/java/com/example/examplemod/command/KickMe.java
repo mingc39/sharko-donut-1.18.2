@@ -11,6 +11,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 public class KickMe {
 	
@@ -24,13 +25,16 @@ public class KickMe {
 		try {
 			ServerPlayer player = source.getPlayerOrException();
 			player.connection.disconnect(new TextComponent("킼미킼미킼미없"));
-			LogUtils.getLogger().info("플레이어 \"" + player.getName().getString() + "\"(이)가 대오하였습니다.");
-			// TODO: 플레이어 XXX가 도주하였다고 전체 메시지 떄리는거 넣어주세요
+			LogUtils.getLogger().info("[KickMe] 플레이어 \"" + player.getName().getString() + "\"(이)가 대오하였습니다.");
+			TextComponent textComponent = new TextComponent("플레이어 \"" + player.getName().getString() + "\"(이)가 대오하였습니다.");
+			source.getServer().getPlayerList().getPlayers().forEach(p -> p.sendMessage(textComponent, null));
 		} catch (CommandSyntaxException e) {
 			//e.printStackTrace();
-			LogUtils.getLogger().error("플레이어가 아닌 엔티티가 대오하려 하빈다. 서버가 폭파됩니다");
+			LogUtils.getLogger().error("[KickMe] 플레이어가 아닌 엔티티가 대오하려 하빈다. 서버가 폭파됩니다");
 			// TODO: 왜 stopServer해도 서버 꺼지다 맘?
 			//source.getServer().stopServer();
+			//source.getServer().shut
+			
 		}
 		/*
 		if (source.getEntity() instanceof Player) {
