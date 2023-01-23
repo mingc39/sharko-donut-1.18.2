@@ -17,5 +17,7 @@ public class ItemInit {
 	
 	public static final RegistryObject<BlockItem> SHARKO_BLOCK_ITEM = ITEMS.register("sharko_block", 
 			() -> new BlockItem(BlockInit.SHARKO_BLOCK.get(), new Item.Properties().tab(ExampleMod.CREATIVE_TAB)));
+	public static final RegistryObject<BlockItem> NULL_BLOCK_ITEM = ITEMS.register("null_block", 
+			() -> new BlockItem(BlockInit.NULL_BLOCK.get(), new Item.Properties().tab(ExampleMod.CREATIVE_TAB)));
 
 }

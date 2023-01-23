@@ -1,6 +1,7 @@
 package com.example.examplemod.init;
 
 import com.example.examplemod.ExampleMod;
+import com.example.examplemod.block.NullBlock;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -17,5 +18,7 @@ public class BlockInit {
 	
 	public static final RegistryObject<Block> SHARKO_BLOCK = BLOCKS.register("sharko_block", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> NULL_BLOCK = BLOCKS.register("null_block", 
+			() -> new NullBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
 }
