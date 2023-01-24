@@ -15,10 +15,7 @@ public class NullBlock extends Block {
 	@Override
 	public void neighborChanged(BlockState blockState, Level level, BlockPos pos, Block block,
 			BlockPos fromPos, boolean isMoving) {
-		System.out.println("pos1: " + pos.toShortString());
-		System.out.println("from pos: " + pos.toShortString());
 		boolean signal = level.hasNeighborSignal(pos);
-		System.out.println("signal " + signal);
 		throw new NullPointerException("Null block got redstone signal");
 	}
 
